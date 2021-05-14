@@ -87,28 +87,17 @@
                     android:timePickerMode="spinner" />
             </LinearLayout>
 
-            <RadioGroup
+            <TextView
+                android:id="@+id/textViewSmokingOption"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="wrap_content"
+                android:text="@string/smoking_or_non_smoking_area" />
 
-                <TextView
-                    android:id="@+id/textViewSmokingOption"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/smoking_or_non_smoking_area" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonSmoke"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/yes" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonNonSmoke"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/no" />
-            </RadioGroup>
+            <CheckBox
+                android:id="@+id/checkBoxSmokeOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Smoking" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,7 +120,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textViewDisplay"
+                android:id="@+id/textViewMessage"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:hint="@string/display_reservation_info" />
