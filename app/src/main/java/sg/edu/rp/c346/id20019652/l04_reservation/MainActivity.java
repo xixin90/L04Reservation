@@ -56,11 +56,12 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Button Click", Toast.LENGTH_LONG).show();
                 if (cbEnabled.isChecked()) {
-                    tvMessage.setText(displayS);
+                    Toast.makeText(MainActivity.this, displayS, Toast.LENGTH_LONG).show();
                 }
                 else{
-                    tvMessage.setText(displayNonS);
+                    Toast.makeText(MainActivity.this, displayNonS, Toast.LENGTH_LONG).show();
                 }
+                tvMessage.setText("You have successfully booked a table.");
             }
         });
 
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 edMobile.setText(" ");
                 edSize.setText(" ");
 
-                Toast.makeText(MainActivity.this, "Button Reset is long", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "You have Reset your reservation", Toast.LENGTH_LONG).show();
                 Toast.makeText(MainActivity.this, "Button Reset is clicked", Toast.LENGTH_SHORT).show();
             }
         });
