@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
                 String date = "Date is " + day + "/" + month + "/" + year;
                 String time = "Time is " + tp.getCurrentHour() + ":" + tp.getCurrentMinute();
-                String displayS = "Hi " + edName + ", You have reserved a " + edSize + " person(s) smoking table on " + date + " at " + time + ". Your phone number is " + edMobile + " .";
-                String displayNonS = "Hi " + edName + ", You have reserved a " + edSize + " person(s) non-smoking table on " + date + " at " + time + ". Your phone number is " + edMobile + " .";
+                String displayS = "Hi " + edName.getText() + ", You have reserved a " + edSize.getText() + " person(s) smoking table on " + date + " at " + time + ". Your phone number is " + edMobile.getText() + " .";
+                String displayNonS = "Hi " + edName.getText() + ", You have reserved a " + edSize.getText() + " person(s) non-smoking table on " + date + " at " + time + ". Your phone number is " + edMobile.getText() + " .";
 
-                Toast.makeText(MainActivity.this, "Button Click", Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, "Button Click", Toast.LENGTH_LONG).show();
                 if (cbEnabled.isChecked()) {
                     Toast.makeText(MainActivity.this, displayS, Toast.LENGTH_LONG).show();
                 }
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 edSize.setText(" ");
 
                 Toast.makeText(MainActivity.this, "You have Reset your reservation", Toast.LENGTH_LONG).show();
-                Toast.makeText(MainActivity.this, "Button Reset is clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "Button Reset is clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }
