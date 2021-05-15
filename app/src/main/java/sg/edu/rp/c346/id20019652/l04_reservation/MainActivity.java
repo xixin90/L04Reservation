@@ -3,6 +3,7 @@ package sg.edu.rp.c346.id20019652.l04_reservation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -51,19 +52,51 @@ public class MainActivity extends AppCompatActivity {
                 int month = dp.getMonth() + 1;
                 int year = dp.getYear();
 
+                int mobile = Integer.parseInt(edMobile.getText().toString());
+                int size = Integer.parseInt(edSize.getText().toString());
+                String name = edName.getText().toString();
                 String date = "Date is " + day + "/" + month + "/" + year;
                 String time = "Time is " + tp.getCurrentHour() + ":" + tp.getCurrentMinute();
-                String displayS = "Hi " + edName.getText() + ", You have reserved a " + edSize.getText() + " person(s) smoking table on " + date + " at " + time + ". Your phone number is " + edMobile.getText() + " .";
-                String displayNonS = "Hi " + edName.getText() + ", You have reserved a " + edSize.getText() + " person(s) non-smoking table on " + date + " at " + time + ". Your phone number is " + edMobile.getText() + " .";
+
+                String displayS = "Hi " + name+ ", You have reserved a " + size + " person(s) smoking table on " + date + " at " + time + ". Your phone number is " + mobile + " .";
+                String displayNonS = "Hi " + name + ", You have reserved a " + size + " person(s) non-smoking table on " + date + " at " + time + ". Your phone number is " + mobile + " .";
 
                 //Toast.makeText(MainActivity.this, "Button Click", Toast.LENGTH_LONG).show();
-                if (cbEnabled.isChecked()) {
-                    Toast.makeText(MainActivity.this, displayS, Toast.LENGTH_LONG).show();
+                if (!name.isEmpty() && mobile != 0 && size != 0) {
+                    if (cbEnabled.isChecked()) {
+                        Toast.makeText(MainActivity.this, displayS, Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this, displayNonS, Toast.LENGTH_LONG).show();
+                    }
+                    tvMessage.setText("You have successfully booked a table.");
+                }
+                else {
+                    tvMessage.setText("Your name / mobile number / size of group is/are missing. Please fill in the required fields.");
+                }
+            }
+        });
+
+        tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+
+                int minHour = 8;
+                int minMinute = 0;
+                int maxHour = 20;
+                int maxMinute = 59;
+
+                boolean validTime = true;
+                if (hourOfDay < minHour || (hourOfDay == minHour && minute < minMinute)) {
+                    validTime = false;
+                }
+                if (hourOfDay > maxHour || (hourOfDay == maxHour && minute > maxMinute)){
+                    validTime = false;
                 }
                 else{
-                    Toast.makeText(MainActivity.this, displayNonS, Toast.LENGTH_LONG).show();
+                    String strResponse = "You have exceeded the booking hours";
+                    setTitle(strResponse);
                 }
-                tvMessage.setText("You have successfully booked a table.");
             }
         });
 
