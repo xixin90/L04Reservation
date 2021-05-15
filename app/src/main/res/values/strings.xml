@@ -14,4 +14,5 @@
     <string name="display_reservation_info">Display Reservation Info</string>
     <string name="smoking">Smoking</string>
     <string name="pic1">TODO</string>
+    <string name="enter_no_of_people">Enter no. of people</string>
 </resources>

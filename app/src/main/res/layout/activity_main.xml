@@ -55,9 +55,9 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textViewSize"
@@ -67,13 +67,33 @@
                     android:textColor="#000000" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName3"
+                    android:id="@+id/editTextSize"
+                    android:layout_width="327dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/enter_no_of_people"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewSmokingOption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/smoking_or_non_smoking_area"
+                    android:textColor="#000000" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSmokeOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/enter_number_of_people"
-                    android:inputType="textPersonName"
-                    android:textColor="#000000" />
+                    android:text="@string/smoking" />
             </LinearLayout>
 
             <LinearLayout
@@ -95,19 +115,6 @@
                     android:calendarViewShown="false"
                     android:timePickerMode="spinner" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/textViewSmokingOption"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/smoking_or_non_smoking_area"
-                android:textColor="#000000" />
-
-            <CheckBox
-                android:id="@+id/checkBoxSmokeOption"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/smoking" />
 
             <LinearLayout
                 android:layout_width="match_parent"
