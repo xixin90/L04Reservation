@@ -3,7 +3,6 @@ package sg.edu.rp.c346.id20019652.l04_reservation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -12,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -77,26 +78,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            Calendar mCalendar;
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+
+                mCalendar = Calendar.getInstance();
+                tp.setIs24HourView(false);
+                tp.setOnTimeChangedListener(this);
 
                 int minHour = 8;
                 int minMinute = 0;
                 int maxHour = 20;
                 int maxMinute = 59;
 
-                boolean validTime = true;
+                int currentHour = 0;
+                int currentMinute = 0;
+                boolean validTimePick = true;
+
                 if (hourOfDay < minHour || (hourOfDay == minHour && minute < minMinute)) {
-                    validTime = false;
+                    validTimePick = false;
                 }
                 if (hourOfDay > maxHour || (hourOfDay == maxHour && minute > maxMinute)){
-                    validTime = false;
+                    validTimePick = false;
                 }
-                else{
-                    String strResponse = "You have exceeded the booking hours";
-                    setTitle(strResponse);
+                if (validTimePick) {
+                    currentHour = hourOfDay;
+                    currentMinute = minute;
                 }
+
+                mCalendar.set(mCalendar.get(Calendar.YEAR),
+                        mCalendar.get(Calendar.MONTH),
+                        mCalendar.get(Calendar.DAY_OF_MONTH), hourOfDay, minute);
             }
         });
 
