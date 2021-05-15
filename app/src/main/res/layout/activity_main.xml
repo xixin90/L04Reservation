@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <ScrollView
@@ -17,7 +19,9 @@
                 android:id="@+id/textViewName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/name" />
+                android:text="@string/name"
+                android:textColor="#040404"
+                android:textColorHighlight="#000000" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
@@ -25,7 +29,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/enter_your_name"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="#000000" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,7 +41,8 @@
                     android:id="@+id/textViewMobileNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mobile_number" />
+                    android:text="@string/mobile_number"
+                    android:textColor="#000000" />
 
                 <EditText
                     android:id="@+id/editTextTextPersonName2"
@@ -44,7 +50,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/enter_your_phone_number"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColor="#000000" />
             </LinearLayout>
 
             <LinearLayout
@@ -56,7 +63,8 @@
                     android:id="@+id/textViewSize"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/size_of_group" />
+                    android:text="@string/size_of_group"
+                    android:textColor="#000000" />
 
                 <EditText
                     android:id="@+id/editTextTextPersonName3"
@@ -64,7 +72,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/enter_number_of_people"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColor="#000000" />
             </LinearLayout>
 
             <LinearLayout
@@ -91,13 +100,14 @@
                 android:id="@+id/textViewSmokingOption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/smoking_or_non_smoking_area" />
+                android:text="@string/smoking_or_non_smoking_area"
+                android:textColor="#000000" />
 
             <CheckBox
                 android:id="@+id/checkBoxSmokeOption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Smoking" />
+                android:text="@string/smoking" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -109,25 +119,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/reserve" />
+                    android:text="@string/reserve"
+                    app:backgroundTint="#552424" />
 
                 <Button
                     android:id="@+id/buttonReset"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/reset" />
+                    android:text="@string/reset"
+                    app:backgroundTint="#552424" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/textViewMessage"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
-                android:hint="@string/display_reservation_info" />
+                android:hint="@string/display_reservation_info"
+                android:textColor="#000000" />
         </LinearLayout>
     </ScrollView>
-
-
 
 
 </LinearLayout>

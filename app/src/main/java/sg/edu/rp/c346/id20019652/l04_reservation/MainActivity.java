@@ -43,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //confirm reservation
                 //display reservation info message for a short while
+                //includes name, mobile no., size of group, date and time
+                //confirm reservation message
+
                 int day = dp.getDayOfMonth();
                 int month = dp.getMonth() + 1;
                 int year = dp.getYear();
