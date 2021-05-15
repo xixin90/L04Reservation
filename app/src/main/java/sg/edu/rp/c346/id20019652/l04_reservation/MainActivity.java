@@ -43,13 +43,43 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //confirm reservation
+                //display reservation info message for a short while
+                int day = dp.getDayOfMonth();
+                int month = dp.getMonth() + 1;
+                int year = dp.getYear();
+
+                String date = "Date is " + day + "/" + month + "/" + year;
+                String time = "Time is " + tp.getCurrentHour() + ":" + tp.getCurrentMinute();
+                String displayS = "Hi " + edName + ", You have reserved a " + edSize + " person(s) smoking table on " + date + " at " + time + ". Your phone number is " + edMobile + " .";
+                String displayNonS = "Hi " + edName + ", You have reserved a " + edSize + " person(s) non-smoking table on " + date + " at " + time + ". Your phone number is " + edMobile + " .";
+
                 Toast.makeText(MainActivity.this, "Button Click", Toast.LENGTH_LONG).show();
                 if (cbEnabled.isChecked()) {
-                    tvMessage.setText("Thank you. You have reserved a table.");
+                    tvMessage.setText(displayS);
                 }
                 else{
-                    tvMessage.setText("Sorry. An error has occurred, please try again.");
+                    tvMessage.setText(displayNonS);
                 }
+            }
+        });
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // set date 1 jun 2020
+                // set time 19:30 PM
+
+                dp.updateDate(2020, 6, 1);
+                tp.setCurrentHour(19);
+                tp.setCurrentMinute(30);
+                edName.setText(" ");
+                edMobile.setText(" ");
+                edSize.setText(" ");
+
+                Toast.makeText(MainActivity.this, "Button Reset is long", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Button Reset is clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }
